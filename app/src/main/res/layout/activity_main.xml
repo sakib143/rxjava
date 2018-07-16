@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnJustExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Just Example"/>
+
+    <Button
+        android:id="@+id/btnDisposable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Disposable Example"/>
+
+    <Button
+        android:id="@+id/btnFilterDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filter Example"/>
+
+    <Button
+        android:id="@+id/btnMultipleObserver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Multiple Observer Example"/>
+
+    <Button
+        android:id="@+id/btnCustomDataType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom Data Type Example"/>
+
+    <Button
+        android:id="@+id/btnCompletableExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Completable Example"/>
+
+    <Button
+        android:id="@+id/btnSingleAndSingleObserver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Single And SingleObserver"/>
+
+
+
+</LinearLayout>
