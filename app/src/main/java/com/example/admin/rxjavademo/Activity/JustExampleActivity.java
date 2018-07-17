@@ -6,6 +6,9 @@ import android.util.Log;
 
 import com.example.admin.rxjavademo.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -22,10 +25,10 @@ public class JustExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_just_example);
 
         // observable
-        Observable<String> animalsObservable = getAnimalsObservable();
+        Observable<List<String>> animalsObservable = getAnimalsObservable();
 
         // observer
-        Observer<String> animalsObserver = getAnimalsObserver();
+        Observer<List<String>> animalsObserver = getAnimalsObserver();
 
         // observer subscribing to observable
         animalsObservable
@@ -35,15 +38,15 @@ public class JustExampleActivity extends AppCompatActivity {
     }
 
 
-    private Observer<String> getAnimalsObserver() {
-        return new Observer<String>() {
+    private Observer<List<String>> getAnimalsObserver() {
+        return new Observer<List<String>>() {
             @Override
             public void onSubscribe(Disposable d) {
                 Log.d(TAG, "onSubscribe");
             }
 
             @Override
-            public void onNext(String s) {
+            public void onNext(List<String> s) {
                 Log.d(TAG, "Name: " + s);
             }
 
@@ -59,8 +62,12 @@ public class JustExampleActivity extends AppCompatActivity {
         };
     }
 
-    private Observable<String> getAnimalsObservable() {
-        return Observable.just("Ant", "Bee", "Cat", "Dog", "Fox");
+    private Observable<List<String>> getAnimalsObservable() {
+        List<String> myList = new ArrayList<String>();
+        for (int i = 0; i <50 ; i++) {
+            myList.add("Student "+i);
+        }
+        return Observable.just (myList);
     }
 
 }

@@ -21,8 +21,8 @@
         <activity android:name=".Activity.FilterExampleActivity" />
         <activity android:name=".Activity.MultipleObserverActivity" />
         <activity android:name=".Activity.CustomTypeActivity" />
-        <activity android:name=".Activity.CompletableExampleActivity" />
-        <activity android:name=".Activity.SingleAndSingleObserverActivity"></activity>
+        <activity android:name=".Activity.SingleAndSingleObserverActivity" />
+        <activity android:name=".Activity.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

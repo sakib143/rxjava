@@ -1,21 +1,20 @@
 package com.example.admin.rxjavademo;
 
-import android.arch.lifecycle.MutableLiveData;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.admin.rxjavademo.Activity.CompletableExampleActivity;
 import com.example.admin.rxjavademo.Activity.CustomTypeActivity;
 import com.example.admin.rxjavademo.Activity.FilterExampleActivity;
 import com.example.admin.rxjavademo.Activity.JustExampleActivity;
 import com.example.admin.rxjavademo.Activity.MultipleObserverActivity;
+import com.example.admin.rxjavademo.Activity.SingleAndSingleObserverActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnJustExample,btnDisposable,btnFilterDemo,btnMultipleObserver,btnCustomDataType,btnCompletableExample,btnSingleAndSingleObserver;
+    private Button btnJustExample, btnDisposable, btnFilterDemo, btnMultipleObserver, btnCustomDataType, btnCompletableExample, btnSingleAndSingleObserver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             try {
-                switch (view.getId()){
+                switch (view.getId()) {
                     case R.id.btnJustExample:
                         Intent intent = new Intent(MainActivity.this, JustExampleActivity.class);
                         startActivity(intent);
@@ -66,17 +65,10 @@ public class MainActivity extends AppCompatActivity {
                         Intent intentCustomType = new Intent(MainActivity.this, CustomTypeActivity.class);
                         startActivity(intentCustomType);
                         break;
-                    case R.id.btnCompletableExample:
-                        Intent intentCompletable = new Intent(MainActivity.this, CompletableExampleActivity.class);
-                        startActivity(intentCompletable);
-                        break;
                     case R.id.btnSingleAndSingleObserver:
-                        Intent intentSingleObserver = new Intent(MainActivity.this, CompletableExampleActivity.class);
+                        Intent intentSingleObserver = new Intent(MainActivity.this, SingleAndSingleObserverActivity.class);
                         startActivity(intentSingleObserver);
                         break;
-
-
-
                 }
             } catch (Exception e) {
                 e.printStackTrace();
