@@ -1,5 +1,6 @@
 package com.example.admin.rxjavademo.Activity;
 
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -8,6 +9,9 @@ import com.example.admin.rxjavademo.R;
 
 import android.util.Log;
 
+import java.util.List;
+
+import io.reactivex.Observable;
 import io.reactivex.Single;
 import io.reactivex.SingleEmitter;
 import io.reactivex.SingleObserver;
@@ -15,6 +19,7 @@ import io.reactivex.SingleOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
@@ -50,6 +55,28 @@ public class SingleAndSingleObserverActivity extends AppCompatActivity {
                         Log.d(TAG, "onError: " + e.getMessage());
                     }
                 });
+
+        noteObservable
+                .observeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<NotesModel>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        Log.d(TAG, "onSubscribe");
+                        disposable = d;
+                    }
+
+                    @Override
+                    public void onSuccess(NotesModel note) {
+                        Log.e(TAG, "onSuccess: " + note.getNote());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d(TAG, "onError: " + e.getMessage());
+                    }
+                });
+
 
     }
 
